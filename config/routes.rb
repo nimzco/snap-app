@@ -1,10 +1,3 @@
-# if url has a subdomain and it is not 'www'
-class SubdomainPresent
-  def self.matches?(request)
-    request.subdomain.present? && request.subdomain != 'www'
-  end
-end
-
 # if subdomain url is empty or is 'www'
 class SubdomainBlank
   def self.matches?(request)
@@ -13,7 +6,22 @@ class SubdomainBlank
 end
 
 
+# if url has a subdomain and it is not 'www'
+class SubdomainPresent
+  def self.matches?(request)
+    request.subdomain.present? && request.subdomain != 'www'
+  end
+end
+
+
 Rails.application.routes.draw do
+
+ constraints(SubdomainBlank) do
+    resources :accounts, only: [:new, :create]
+    devise_for :admin_users, ActiveAdmin::Devise.config
+    ActiveAdmin.routes(self)
+    root 'welcome#index'
+  end
 
   constraints(SubdomainPresent) do
     root 'users#index', as: :subdomain_root
@@ -21,14 +29,12 @@ Rails.application.routes.draw do
     resources :users, only: :index
   end
 
-  constraints(SubdomainBlank) do
-    devise_for :admin_users, ActiveAdmin::Devise.config
-    ActiveAdmin.routes(self)
-
-    root 'welcome#index'
-    resources :accounts, only: [:new, :create]
-  end
+ 
 end
+
+
+
+
   # devise_for :users
   # resources :accounts
 
