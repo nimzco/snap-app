@@ -1,35 +1,163 @@
-<div class="col-md-6 col-md-offset-3 panel panel-default">
-  <div class="panel-body">
-    <h2>Create an Account</h2>
+<script type="text/javascript">
+        $(document).ready(function() {
+            $(".control-group").hide();
+            //$(".field-help").hide();
+
+            $(".required").focus(function() {
+                var captionId = '#div' + $(this).attr('rel') + 'Caption';
+                $(captionId).show();
+            });
+            $(".required").blur(function() {
+//                var captionId = '#ctl00_ContentPlaceHolder1_lbl' + $(this).attr('rel') + 'Caption';
+//                var successId = '#ctl00_ContentPlaceHolder1_lbl' + $(this).attr('rel') + 'Success';
+//                var errorId = '#ctl00_ContentPlaceHolder1_lbl' + $(this).attr('rel') + 'Error';
+                var captionId = '#div' + $(this).attr('rel') + 'Caption';
+                var successId = '#div' + $(this).attr('rel') + 'Success';
+                var errorId = '#div' + $(this).attr('rel') + 'Error';
+                var currentId = '#' + $(this).attr('id');
+                $(captionId).hide();
+                if ($(currentId).val() == "") {
+                    $(errorId).show();
+                    $(successId).hide();
+                }
+                else {
+                    $(successId).show();
+                    $(errorId).hide();
+                }
+
+            });
+            $(".email").blur(function() {
+//                var captionId = '#ctl00_ContentPlaceHolder1_lbl' + $(this).attr('rel') + 'Caption';
+//                var successId = '#ctl00_ContentPlaceHolder1_lbl' + $(this).attr('rel') + 'Success';
+//                var errorId = '#ctl00_ContentPlaceHolder1_lbl' + $(this).attr('rel') + 'Error';
+            var captionId = '#div' + $(this).attr('rel') + 'Caption';
+            var successId = '#div' + $(this).attr('rel') + 'Success';
+            var errorId = '#div' + $(this).attr('rel') + 'Error';
+                var currentId = '#' + $(this).attr('id');
+
+                if (IsEmail($(currentId).val())) {
+                    $(successId).show();
+                    $(errorId).hide();
+                }
+                else {
+                    $(errorId).show();
+                    $(successId).hide();
+                }
+            });
+            $(".required1").click(function(e) {
+                var flag="";
+                $('.required').each(function(i, obj) {
+//                    var captionId = '#ctl00_ContentPlaceHolder1_lbl' + $(this).attr('rel') + 'Caption';
+//                    var successId = '#ctl00_ContentPlaceHolder1_lbl' + $(this).attr('rel') + 'Success';
+//                    var errorId = '#ctl00_ContentPlaceHolder1_lbl' + $(this).attr('rel') + 'Error';
+                    var captionId = '#div' + $(this).attr('rel') + 'Caption';
+                    var successId = '#div' + $(this).attr('rel') + 'Success';
+                    var errorId = '#div' + $(this).attr('rel') + 'Error';
+                    var currentId = '#' + $(this).attr('id');
+                    if ($(currentId).val() == "") {
+                        $(errorId).show();
+                        $(successId).hide();
+                        flag = "0";
+                    }
+                    else {
+                        $(successId).show();
+                        $(errorId).hide();
+
+                    }
+
+                });
+                $('.email').each(function(i, obj) {
+                    //var captionId = '#ctl00_ContentPlaceHolder1_lbl' + $(this).attr('rel') + 'Caption';
+                    // var successId = '#ctl00_ContentPlaceHolder1_lbl' + $(this).attr('rel') + 'Success';
+                //var errorId = '#ctl00_ContentPlaceHolder1_lbl' + $(this).attr('rel') + 'Error';
+                var captionId = '#div' + $(this).attr('rel') + 'Caption';
+                var successId = '#div' + $(this).attr('rel') + 'Success';
+                var errorId = '#div' + $(this).attr('rel') + 'Error';
+                    var currentId = '#' + $(this).attr('id');
+                    if (IsEmail($(currentId).val())) {
+                        $(successId).show();
+                        $(errorId).hide();
+                    }
+                    else {
+                        $(errorId).show();
+                        $(successId).hide();
+                        flag = "0";
+                    }
+
+                });
+                if (flag == "0") {
+                    e.preventDefault();
+                }
+
+            });
+        });
+        function IsEmail(email) {
+            var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            return regex.test(email);
+        }
+
+</script>
+
+
+
+
+
+<div class="row"> 
+     <h2><span id="ctl00_ContentPlaceHolder1_lblSignupBodyTitle">Créez un compte Snapshifts pour votre restaurant – c'est gratuit !  </span> </h2>
+</div>
+
 
     <%= form_for @account do |f| %>
+      
       <%= f.fields_for :owner do |o| %>
-        <%= form_group_for o, :firstname do %>
-          <%= o.text_field :firstname, class: 'form-control' %>
-        <% end %>
-        <%= form_group_for o, :lastname do %>
-          <%= o.text_field :lastname, class: 'form-control' %>
-        <% end %>
-        <%= form_group_for o, :email do %>
-          <%= o.text_field :email, class: 'form-control' %>
-        <% end %>
-        <%= form_group_for o, :password do %>
-          <%= o.password_field :password, class: 'form-control' %>
-        <% end %>
-        <%= form_group_for o, :password_confirmation do %>
-          <%= o.password_field :password_confirmation, class: 'form-control' %>
-        <% end %>
-      <% end %>
-
-      <%= form_group_for f, :name do %>
-        <%= f.text_field :name, class: 'form-control' %>
-      <% end %>
-      <%= form_group_for f, :subdomain do %>
-        <div class="input-group">
-          <%= f.text_field :subdomain, class: 'form-control' %>
-          <span class="input-group-addon">.snapshifts.com</span>
+        <div class="row">
+          <%= form_group_for o, :firstname, opts={label: 'Votre prénom'} do %>
+            <%= o.text_field :firstname, label: 'Votre prénom', class: 'form-control ' %>
+            <% end %>
+          <%= form_group_for o, :lastname do %>
+            <%= o.text_field :lastname, class: 'form-control' %>
+            <% end %>
+        </div>
+        <div class="row">  
+          <%= form_group_for o, :email do %>
+            <%= o.text_field :email, class: 'form-control' %>
+            <% end %>
+        </div>
+        <div class="row"> 
+          <%= form_group_for o, :password do %>
+            <%= o.password_field :password, class: 'form-control' %>
+            <% end %>
+          <%= form_group_for o, :password_confirmation do %>
+            <%= o.password_field :password_confirmation, class: 'form-control' %>
+            <% end %>
         </div>
       <% end %>
+      <div class="row">
+        <%= form_group_for f, :name do %>
+          <%= f.text_field :name, class: 'form-control' %>
+        <% end %>
+      </div>
+      <div class="row"> 
+        <%= form_group_for f, :subdomain do %>
+          <div class="input-group">
+            <%= f.text_field :subdomain, class: 'form-control' %>
+            <span class="input-group-addon">.snapshifts.com</span>
+          </div>
+           <% end %>
+      </div>
+      <div class="row">   
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h3 class="panel-title">A quoi sert le sous-domaine ? </h3>
+            </div>  
+            <div class="panel-body">
+              <p>Le sous-domaine est une adresse personnalisée pour votre entreprise : vous et vos collaborateurs utiliserez cette adresse unique pour vous connecter à votre compte Snapshifts à une adresse du type <font style= "font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+background-color: #eee;white-space: pre-wrap; padding: 1px 5px;"}>http://votresousdomaine.snapshifts.com</font>.</p>
+              <p>Choisissez un sous-domaine simple à mémoriser et en relation avec votre entreprise.</p>
+            </div>           
+        </div>
+      </div>
+       
       <%= f.submit class: 'btn btn-primary' %>
     <% end %>
   </div>

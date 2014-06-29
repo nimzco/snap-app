@@ -16,6 +16,8 @@ end
 
 Rails.application.routes.draw do
 
+ get 'welcome/wrong_domain' => 'welcome#wrong_domain'
+
  constraints(SubdomainBlank) do
     resources :accounts, only: [:new, :create]
     devise_for :admin_users, ActiveAdmin::Devise.config
@@ -28,6 +30,7 @@ Rails.application.routes.draw do
     devise_for :users
     resources :users, only: :index
   end
+
 
  
 end

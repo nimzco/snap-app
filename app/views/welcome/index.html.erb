@@ -1,7 +1,638 @@
-<div class="col-md-12">
-	<div class="jumbotron">
-		<h1>Snapshifts</h1>
-		<p>Bolo bolo bololo bolo.</p>
-		<p><%= link_to "Create Account", new_account_path, class: 'btn btn-primary btn-lg' %></p>
+  <!-- NAV-->
+   <nav id="topnav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+   <div class="container">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+      <a class="snapshiftslogo" href="#head-top"></a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse top-spy">
+    <ul class="nav navbar-nav navbar-right">
+         <li class="active"><a href="#head-top">accueil</a></li>
+				  <!-- <li><a href="#Section-1">Pourquoi ?</a></li>
+				  <li><a href="#Section-2">Restaurant 2.0</a></li> -->
+				  <li><a href="#Section-2">Fonctionnalités</a></li>
+				  <li><a href="#Section-4">Prix</a></li>
+				  
+				  <!-- <li class="dropdown">
+                		<a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"> <span id="ctl00_lbllangauge"> Français</span> <b class="caret"></b></a>
+                		<ul class="dropdown-menu">
+                  			
+                  			<li><a href="../en/index.html">English </a></li>
+                  			<li><a href="../es/index.html">Español </a></li>
+		                </ul>
+		           </li> -->
+		           <li><%= link_to "Je crée mon compte", new_account_path %></li>
+
+				  
+    </ul>
+  </div><!-- /.navbar-collapse -->
+  </div> <!-- /.container -->
+</nav>
+	<!-- /NAV -->
+<!-- HEADER --> 
+ <header id="head-top">
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="jumbotron">
+  
+    <div id="myCarousel" class="carousel slide">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    
+  </ol>
+ <div class="container">
+  <!-- Carousel items -->
+  <div class="carousel-inner">  
+    <div class="active item"> 
+    
+      <div class="row">
+        <div class="text-right col-xs-12 col-sm-6 col-md-5 col-lg-5" style="padding-top:40px; ">
+          <h2 class="jumbo">Snapshifts: plannings du personnel pour les restaurants</h2>
+          <p class="lead">
+            Snapshifts révolutionne l'organisation des équipes dans les restaurants. Une solution conçue par des restaurateurs pour la restauration rapide ou traditionnelle. 
+          </p>
+
+        </div>
+        <div class="text-center col-xs-12 col-sm-6 col-md-7 col-lg-7" >
+        	<%= image_tag "static/macbookair.png", :class => "img-responsive" %>
+        </div>
+      </div>
+  </div>
+    <div class="item">
+        <div class="row">
+          <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <%= image_tag "static/flatphone.png" %>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8" style="padding-top:40px; ">
+            <h2 class="jumbo">Mobile,</br>web : votre équipe connectée</h2>
+            <p class="lead">Managers et employés gagnent du temps. Votre équipe devient plus fiable.</p>
+          </div>
+        </div>
+    </div>
+    </div>
+ </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev"><i class="icon-chevron-left"></i></a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next"><i class="icon-chevron-right"></i></a>
+    </div>
+      </div>
+    
+    <!-- GO BTN WRAPPER-->
+    <div class="gobtnwrapper">
+    <a class="gobtn" href="#Section-1"><i class="icon-chevron-down icon-large"></i></a>
+    </div>
+    <!-- /GO BTN WRAPPER-->
+  </header>
+<!-- / HEADER -->
+
+
+<!--  SECTION-1 -->  
+<section id="Section-1">
+	<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+		<div class="page-header text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h3>Ce que Snapshifts va changer pour votre restaurant</h3>
+			<p class="lead">
+				Vous perdez votre temps à modifier les plannings de votre personnel, en espérant que tous soient bien informés des changements. Turn-over et horaires décalés minent la communication interne : les informations circulent mal, le savoir est mal transmis, l'esprit d'équipe souffre. Ça c'était avant Snapshifts.  
+			</p>
+		</div> 
+	</div>	
+	
+	<div class="row">
+        <div class="text-center box col-xs-12 col-sm-6 col-md-3 col-lg-3">
+			<a href="#"><%= image_tag "static/hug.png", :class => "img-circle", :width => "160" %></a>
+          <h3>Vos employés vous adorent </h3>
+          <p class="justify light">C'est le bonheur. Avec Snapshifts vos employés peuvent participer à l'élaboration des plannings en indiquant leurs disponibilités. Ils sont informés en temps réel des modifications par email, peuvent consulter leur planning en ligne à tout moment. Concilier boulot et vie privée devient plus simple. </p>
+         
+        </div>
+        <div class="text-center box col-xs-12 col-sm-6 col-md-3 col-lg-3">
+			<a href="#"><%= image_tag "static/piggy.png", :class => "img-circle", :width => "160" %></a>
+          <h3>Vous gagnez de l'argent</h3>
+          <p class="justify light">Vous avez plus de temps pour vos clients. Vous et vos managers passez 4 fois moins de temps à faire et défaire les plannings, jongler avec les impératifs des uns et des autres, prévenir chacun des changements. Tout ce temps économisé, c'est du temps en plus pour vos clients et le business. </p>
+         
+       </div>
+        <div class="text-center box col-xs-12 col-sm-6 col-md-3 col-lg-3">
+			<a href="#"><%= image_tag "static/medecine.png", :class => "img-circle", :width => "160" %></a>
+          <h3>C'est facile</h3>
+          <p class="justify light">99% des restaurants font leurs plannings du personnel sur papier, soit avec Excel, soit avec un crayon (c'est souvent mieux). Avec Snapshifts, les plannings se font sur une page web en quelques clics. Les employés reçoivent leur planning dans leur boite mail – mais vous pouvez toujours les imprimer.</p>
+        
+        </div>
+	
+		<div class="text-center box col-xs-12 col-sm-6 col-md-3 col-lg-3">
+			<a href="#"><%= image_tag "static/team.jpg", :class => "img-circle", :width => "160" %></a>
+          <h3>L'esprit d'équipe est boosté</h3>
+          <p class="justify light">Vous communiquez mieux. Snapshifts c'est aussi la meilleure façon de partager les documents et actualités du restaurant avec votre équipe : fiches techniques, consignes, règlement intérieur, photos de nouveautés (ou de soirée d'anniversaire), etc. Tout ça de façon conviviale et pratique.</p>
+        
+        </div>
+	
 	</div>
+	
+	</div><!-- / CONTAINER-->
+	<div class="well">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+					<p class="lead">
+						Créez un compte pour votre restaurant, c'est gratuit !
+					</p>
+					
+				</div>
+				<div class="text-left col-xs-12 col-sm-3 col-md-3 col-lg-3">
+					<a class="btn btn-large btn-block btn-danger" href="../signup.aspx?lan=fr">Inscription</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- / SECTION-1 -->
+
+<!-- SECTION-3 -->
+<section id="Section-3">
+	<div class="container">
+
+   <div class="row">
+		<div class="page-header text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<h3>Les nouvelles technologies c'est aussi pour les restaurants</h3>
+			<p class="lead">
+		</p></div> 
+	</div>	
+	
+      <!-- Example row of columns -->
+    <div class="row">
+	        <div class="text-center col-xs-12 col-sm-6 col-md-4 col-lg-4">
+	         	<a href="#"><%= image_tag "static/iMac.png", :class => "img-responsive"%></a> 
+	        </div>
+	        <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8">
+	          <h3>Dynamisez et valorisez vos équipes</h3>
+	          <p class="lead">Qui a dit que les restaurateurs n'avaient pas droit aux outils web ? Vous, vos managers et vos équipes avez le droit d'avoir des outils performants, simples, et efficaces. Et tout simplement cool. Avec Snapshifts, vous valorisez vos salariés et votre restaurant. </p>
+	       </div>
+    </div>
+
+	<hr>
+
+	<div id="myCarousel2" class="carousel slide">
+  		<!-- Carousel items -->
+			  <div class="carousel-inner">
+			  
+			  <div class="item active">
+			  <div class="row text-center">
+					<!-- ITEM-->
+			        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+						<div class="thumbnail product-item">
+							<a href="#"><%= image_tag "static/ipad2.png", :class => "img-responsive"%></a>
+						</div>
+						<h3>Temps partiels</h3>
+						<p class="justify light">Les disponibilités prévues dans les contrats à temps partiel sont enregistrées pour chaque salarié. C'est bien plus simple pour les managers d'élaborer les emplois du temps !</p>	
+			        </div>
+					<!-- ITEM-->
+					
+					<!-- ITEM-->
+			        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+						<div class="thumbnail product-item">
+							<a href="#"><%= image_tag "static/iPad-Vertical-mail.png", :class => "img-responsive"%></a>
+						</div>
+						<h3>Alertes email</h3>
+						<p class="justify light">Un changement de planning ? Les collaborateurs concernés sont alertés automatiquement et immédiatement par email.</p>	
+			        </div>
+					<!-- ITEM-->
+					
+					<!-- ITEM-->
+			        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+						<div class="thumbnail product-item">
+							<a href="#"><%= image_tag "static/iPad-Vertical-wall.png", :class => "img-responsive"%></a>
+						</div>
+						<h3>Le mur</h3>
+						<p class="justify light">Simple et sympa : tous les membres de l'équipe peuvent échanger messages, photos et commentaires sur le "mur". Un Facebook privé en quelque sorte.</p>	
+			        </div>
+					<!-- ITEM-->
+					
+				</div>
+				</div>
+				
+				<div class="item">
+				<div class="row text-center">
+					<!-- ITEM-->
+			        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						<div class="thumbnail product-item">
+							<a href="#"><%= image_tag "static/iPad-Horizontal-schedule.png", :class => "img-responsive"%></a>
+						</div>
+						<h3>Plannings sur le web</h3>
+						<p class="justify light">Chaque employé dispose d'un compte pour accéder à Snapshifts avec une simple connexion Internet.</p>	
+			        </div>
+					<!-- ITEM-->
+					
+					<!-- ITEM-->
+			        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						<div class="thumbnail product-item">
+							<a href="#"><%= image_tag "static/iPad-Horizontal-to.png", :class => "img-responsive"%></a>
+						</div>
+						<h3>Indisponibilités</h3>
+						<p class="justify light">Un partiel, un rendez-vous chez le médecin, un week-end en amoureux ? Les employés peuvent enregistrer leurs indisponibilités en ligne --- pour quelques heures seulement, une journée entière ou même plusieurs jours de suite.</p>	
+			        </div>
+					<!-- ITEM-->
+					
+					
+				</div>
+				</div>
+
+				<div class="item">
+				<div class="row text-center">
+					<!-- ITEM-->
+			        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						<div class="thumbnail product-item">
+							<a href="#"><%= image_tag "static/iPad-Landscape-Doc_Center.png", :class => "img-responsive"%></a>
+						</div>
+						<h3>Documents partagés</h3>
+						<p class="justify light">Manuels de formation, fiches techniques, règlement intérieur, bons de commande, procédures, etc. Avec Snapshifts tous vos documents sont en ligne accessibles à toute votre équipe. Il est temps de mettre de l'ordre dans vos papiers...</p>	
+			        </div>
+					<!-- ITEM-->
+					
+					<!-- ITEM-->
+			        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						<div class="thumbnail product-item">
+							<a href="#"><%= image_tag "static/iPad-Horizontal-employeelist.png", :class => "img-responsive"%></a>
+						</div>
+						<h3>Equipes</h3>
+						<p class="justify light">Les utilisateurs peuvent être regroupés en équipes ou par postes : comptoir, cuisine, salle, livraison, etc. Chaque équipe peut disposer de son emploi du temps.</p>	
+			        </div>
+					<!-- ITEM-->
+					
+					
+				</div>
+				</div>
+
+			</div><!-- /INNER-->  
+				    <!-- Carousel nav -->
+			  <a class="carousel-control left" href="#myCarousel2" data-slide="prev"><i class="icon-chevron-left"></i></a>
+			  <a class="carousel-control right" href="#myCarousel2" data-slide="next"><i class="icon-chevron-right"></i></a>	
+			</div><!-- CAROUSEL-->
+	</div>
+	  
+	<!-- / CONTAINER-->
+	<div class="well">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+					<p class="lead">
+						Essai gratuit, sans obligation, sans CB. </br>Créez votre compte maintenant !
+					</p>
+					
+				</div>
+				<div class="text-left col-xs-12 col-sm-3 col-md-3 col-lg-3">
+					<%= link_to "Je crée mon compte", new_account_path, class: 'btn btn-primary btn-lg' %>
+				</div>
+			</div>
+		</div>
+	</div>
+
+ </section> 
+ <!-- / SECTION-2 -->
+
+<!-- / SECTION-2 --> 
+<section id="Section-2">
+	<div class="container">
+		<div class="row">
+			<div class="page-header text-center col-sm-12 col-lg-12">
+				<h3>Tous vos collaborateurs sont connectés. Même ceux sans Internet. </h3>
+				<p class="lead">Sur Snapshifts.com vous créez un compte pour chacun des salariés et managers de votre restaurant. Chaque salarié peut se connecter sur son compte via Internet, 24h/24, au domicile – ou au travail pour ceux qui n'ont pas Internet. S'il n'y a pas de PC à disposition du personnel dans votre restaurant, vous pouvez continuer à imprimer et afficher documents et plannings comme aujourd'hui.
+
+Envie d'en savoir plus ? Consultez nos réponses aux Questions Fréquentes.
+			</p></div> 
+		</div>	
+ 
+		<div class="row text-center">
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+				<a href="#"><%= image_tag "static/avaone.jpg", :class => "img-circle", :width => "160"%></a>
+				<h3>Patrons</h3>
+			  
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+				<a href="#"><%= image_tag "static/avatwo.jpg", :class => "img-circle", :width => "160"%></a>
+				<h3>Managers</h3>
+			  
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+				<a href="#"><%= image_tag "static/avathree.jpg", :class => "img-circle", :width => "160"%></a>
+				<h3>Serveurs et préparateurs</h3>
+			  
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+				<a href="#"><%= image_tag "static/avafour.jpg", :class => "img-circle", :width => "160"%></a>
+				<h3>Employés polyvalents</h3>
+			  
+			</div>
+			
+		</div>
+		<hr>
+		
+<div class="row">
+<!-- SERVICE SIDE-->
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<!-- INNER ROW-->
+	
+	<h3 class="main-color">FONCTIONS ESSENTIELLES</h3>
+		
+	<!-- SERVICE ITEM-->
+	<div class="about-box row">
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<div class="circ-wrap">
+				<i class="icon-calendar icon-4x"></i>
+			</div>
+		</div>
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">		
+			<h4><span>Plannings</span></h4>
+			
+			<p class="light">
+			La première fonctionnalité de Snapshifts est d'organiser les emplois du temps en simplifiant et rationalisant les échanges entre tous les membres de vos équipes. Toujours sous votre contrôle et celui de vos managers.
+			</p>
+		</div>
+	</div>
+	<!--/ SERVICE ITEM-->
+
+		<!-- SERVICE ITEM-->
+	<div class="about-box row">
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<div class="circ-wrap">
+				<i class="icon-cloud icon-4x"></i>
+			</div>
+		</div>
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">		
+			<h4><span>WEB </span></h4>
+			
+			<p class="light">
+			Snapshifts est un service en ligne (Saas). Vous n'avez pas à acheter ou à installer de logiciel.
+			</p>
+		</div>
+	</div>
+	<!--/ SERVICE ITEM-->
+	
+		<!-- SERVICE ITEM-->
+	<div class="about-box row">
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<div class="circ-wrap">
+				<i class="icon-file icon-4x"></i>
+			</div>
+		</div>
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">		
+			<h4><span>Documents</span></h4>
+			
+			<p class="light">
+			Parce que Snapshifts est l'endroit où tous vos collaborateurs vont se connecter quotidiennement, c'est le meilleur endroit pour y classer et partager vos documents – toujours à jour.
+			</p>
+		</div>
+	</div>
+	<!--/ SERVICE ITEM-->
+			<!-- SERVICE ITEM-->
+	<div class="about-box row">
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<div class="circ-wrap">
+				<i class="icon-comments icon-4x"></i>
+			</div>
+		</div>
+		<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">		
+			<h4><span>Comunication</span></h4>
+			
+			<p class="light">
+			Avec Snapshifts, vous disposez d'une plate-forme de messagerie interne professionnelle pour votre restaurant.
+			</p>
+		</div>
+	</div>
+	<!--/ SERVICE ITEM-->
+
+</div><!--/COL7-->
+
+
 </div>
+</div><!-- /CONTAINER-->
+</section>
+<!-- / SECTION-3 --> 
+ 
+ <!-- SECTION-4 -->
+<section id="Section-4">
+<div class="container">
+   <div class="row">
+		<div class="page-header text-center col-sm-12 col-lg-12">
+			<h3>Service gratuit !</h3>
+			<p class="lead">Snapshifts est gratuit pendant la phase de test -- nous faisons encore de petits réglages. Vous voulez savoir combien Snapshifts coûtera à l'issue de la béta ? Aucune surprise, voici notre future tarification.</p>
+			<p>Snapshifts fonctionnera avec un abonnement mensuel, sans engagement (vous pourrez arrêter à tout moment). Le prix de l'abonnement dépendra du nombre d'utilisateurs (patron, managers et employés confondus) pour votre entreprise.</p>
+		</div> 
+	</div>	
+	
+  
+	  
+	  <div class="row">
+	  
+		<!--  STANDART PRICE ITEM  -->
+			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+				<div class="pricing-table blue"><!-- BODY BOX-->
+					<div class="pricing-table-header"><!-- HEADER BOX-->
+						<span class="heading">1 à 3 utilisateurs</span>
+						<span class="price-value"><span>gratuit</span><span class="mo"></span></span>		   
+					</div><!--/ BODY BOX-->
+						
+				<div class="pricing-table-space"></div><!-- CONTENT BOX-->
+				<div class="pricing-table-features">
+					<p> <strong>Single</strong> installation</p>
+					<p><strong> Unlimited </strong> Support</p>
+					
+				</div><!-- /  CONTENT BOX-->
+						
+			<!--		<div class="pricing-table-sign-up">
+						<a href="#" class="btn btn-large btn-block btn-info">BUY NOW!</a>
+					</div> BUTTON BOX-->
+						
+				</div><!--/ BODY BOX-->
+			</div><!--  COL3  -->
+			<!--  STANDART PRICE ITEM  -->
+			<!--  STANDART PRICE ITEM  -->
+			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+				<div class="pricing-table blue"><!-- BODY BOX-->
+					<div class="pricing-table-header"><!-- HEADER BOX-->
+									
+						<span class="heading">4 à 9 utilisateurs</span>
+						<span class="price-value"><span>20</span>€<span class="mo">/mois</span></span>
+								   
+					</div><!--/ BODY BOX-->
+						
+				<div class="pricing-table-space"></div><!-- CONTENT BOX-->
+				<div class="pricing-table-features">
+					<p> <strong>Single</strong> installation</p>
+					<p><strong> Unlimited </strong> Support</p>
+					
+				</div><!-- /  CONTENT BOX-->
+						
+			<!--		<div class="pricing-table-sign-up">
+						<a href="#" class="btn btn-large btn-block btn-info">BUY NOW!</a>
+					</div> BUTTON BOX-->
+						
+				</div><!--/ BODY BOX-->
+			</div><!--  COL3  -->
+			<!--  STANDART PRICE ITEM  -->
+			<!--  STANDART PRICE ITEM  -->
+			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+			<div class="pricing-table blue"><!-- BODY BOX-->
+				<div class="pricing-table-header"><!-- HEADER BOX-->
+								
+					<span class="heading">10 à 19 utilisateurs</span>
+					<span class="price-value"><span>30</span>€<span class="mo">/mois</span></span>
+							   
+				</div><!--/ BODY BOX-->
+						
+				<div class="pricing-table-space"></div><!-- CONTENT BOX-->
+				<div class="pricing-table-features">
+					<p> <strong>Single</strong> installation</p>
+					<p><strong> Unlimited </strong> Support</p>
+					
+				</div><!-- /  CONTENT BOX-->
+						
+			<!--		<div class="pricing-table-sign-up">
+						<a href="#" class="btn btn-large btn-block btn-info">BUY NOW!</a>
+					</div> BUTTON BOX-->
+					
+			</div><!--/ BODY BOX-->
+			</div><!--  COL3  -->
+			<!--  STANDART PRICE ITEM  -->
+			
+			<!--  STANDART PRICE ITEM  -->
+			<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+			<div class="pricing-table blue"><!-- BODY BOX-->
+			<div class="pricing-table-header"><!-- HEADER BOX-->
+							
+			<span class="heading">+20 utilisateurs</span>
+			<span class="price-value"><span>45</span>€<span class="mo">/mois</span></span>
+						   
+			</div><!--/ BODY BOX-->
+					
+			<div class="pricing-table-space"></div><!-- CONTENT BOX-->
+			<div class="pricing-table-features">
+			<p> <strong>Single</strong> installation</p>
+			<p><strong> Unlimited </strong> Support</p>
+			
+			</div><!-- /  CONTENT BOX-->
+					
+			<!--		<div class="pricing-table-sign-up">
+						<a href="#" class="btn btn-large btn-block btn-info">BUY NOW!</a>
+					</div> BUTTON BOX-->
+					
+			</div><!--/ BODY BOX-->
+			</div><!--  COL3  -->
+			<!--  STANDART PRICE ITEM  -->
+	  </div>
+	</div><!-- / CONTAINER-->
+</section> 
+ <!-- / SECTION-4 -->
+
+
+      
+<!-- FOOTER -->
+<footer id="foot-sec">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<p class="lead">A propos de Snapshifts</p>
+				<p class="light">
+					Snapshifts aide les restaurateurs à organiser et fédérer leurs équipes. Parce que la restauration n'est pas un métier comme les autres : on ne travaille pas de 9h00 à 17h00, les horaires sont décalés, la flexibilité est essentielle, le turn-over est important, la pression du service est quotidienne... et tout ça avec pour seul objectif, la satisfaction du client.
+Snapshifts est un service Cloud qui favorise l'esprit d'équipe, simplifie l'organisation du travail, et fait gagner du temps.
+				</p>
+			</div>
+		</div>	
+
+			
+			<div class="row">
+				<div class="page-header text-center col-sm-12 col-lg-12">
+					<h3 class="">Aide - Contact - Facebook - Google+</h3>
+					
+				</div>
+				<hr>
+			</div>
+			<div class="row">
+				<div class="col-12 col-lg-12 text-center">
+					<div style="display:inline-block">
+
+						<div class="circ-wrap">
+							<a href="http://support.snapshifts.com"><i class="icon-question icon-4x"></i></a>
+						</div>
+
+						<div class="circ-wrap">
+							<a href="http://support.snapshifts.com/customer/portal/emails/new"><i class="icon-envelope icon-4x"></i></a>
+						</div>
+
+						<div class="circ-wrap">
+							<a href="http://www.facebook.com/snapshifts"><i class="icon-facebook icon-4x"></i></a>
+						</div>				
+
+						
+						<div class="circ-wrap">
+							<a href="http://www.bootstraptor.com"><i class="icon-google-plus icon-4x"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+			<hr>
+				<div class="text-center col-sm-12 col-lg-12">
+						<p>© 2013 Snapshift ltd | 12 Helmet Row, London EC1V 3QJ, United Kingdom</p>
+				</div>
+			</div>
+	</div>
+</footer>
+<!-- / FOOTER -->
+   
+
+
+
+<%= javascript_include_tag("footer-home") %>
+
+<!-- SMOOTH SECTIONS SCROLL + PARALLAX PLUGIN -->
+<script>
+//http://www.ianlunn.co.uk/plugins/jquery-parallax/
+jQuery(document).ready(function(){
+	jQuery('#topnav').localScroll(3000);
+	jQuery('.gobtnwrapper').localScroll(3000);
+	
+	//.parallax(xPosition, speedFactor, outerHeight) options:
+	//xPosition - Horizontal position of the element
+	//inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
+	//outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
+	jQuery('.well').parallax("50%", 0.1);
+	//jQuery('#section-2').parallax("50%", 0.1);
+	//jQuery('#section-3').parallax("50%", 0.1);
+
+})
+</script>
+
+<!-- NICE Scroll plugin -->
+<script>
+//scroll bar custom
+	jQuery(document).ready(
+  function() {  
+    jQuery("html").niceScroll({cursorcolor:"#ffffff"});
+  }
+);
+</script>
+
+<script>
+//hide menu after click on mobile
+jQuery('.navbar .nav > li > a').click(function(){
+		jQuery('.navbar-collapse.navbar-ex1-collapse.in').removeClass('in').addClass('collapse').css('height', '0');
+
+		});
+</script>
+
+
+<script>
+	jQuery('.carousel').carousel({
+  interval: 7000
+})
+</script>
