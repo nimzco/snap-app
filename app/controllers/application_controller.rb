@@ -33,12 +33,11 @@ class ApplicationController < ActionController::Base
 
   def redirect_on_non_existing_subdomain
     return if SubdomainBlank.matches? request
-    return if request.path == wrong_domain_path
     account = Account.find_by(subdomain: request.subdomain)
     if account
       ApplicationController.set_current_tenant_by_subdomain(:account, :subdomain)
     else
-      redirect_to wrong_domain_path
+      redirect_to wrong_domain_url(subdomain: 'www')
     end
   end
 
