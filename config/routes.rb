@@ -16,7 +16,7 @@ end
 
 Rails.application.routes.draw do
 
- get 'welcome/wrong_domain' => 'welcome#wrong_domain'
+ get 'welcome/wrong_domain' => 'welcome#wrong_domain', as: 'wrong_domain'
 
  constraints(SubdomainBlank) do
     resources :accounts, only: [:new, :create]
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   end
 
 
- 
+
 end
 
 
